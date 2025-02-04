@@ -18,13 +18,13 @@ class CommissionEmployee
         $this->lastName = $lastName;
         $this->socialSecurityNumber = $socialSecurityNumber;
 
-        if ($this->grossSales >= 0){
+        if ($grossSales >= 0){
             $this->grossSales = $grossSales;
         }else{
-            throw new \Exception("Commission rate must be greater than 0");
+            throw new \Exception("Gross sales must be greater than 0");
         }
 
-        if ($this->commissionRate < 0 || $this->commissionRate > 1) {
+        if ($commissionRate < 0 || $commissionRate > 1) {
             throw new \Exception("Commission rate must be between 0 and 1");
         }else{
             $this->commissionRate = $commissionRate;
@@ -40,19 +40,25 @@ class CommissionEmployee
         return  "Employee first name: " . $this->firstName . "\n"
             . "Employee last name: " . $this->lastName . "\n"
             . "Employee social security number: " . $this->socialSecurityNumber . "\n"
-            . "Employee commission rate: " . $this->commissionRate . "\n";
+            . "Employee commission rate: " . $this->commissionRate . "\n"
+            . "Employee gross sales: " . $this->grossSales;
 
     }
 }
 
-$employee = new CommissionEmployee(
-    "Future",
-    "Hendrix",
-    "112233445566",
-    0.55,
-    50000
-);
 
+try {
+    $employee = new CommissionEmployee(
+        "Future",
+        "Hendrix",
+        "112233445566",
+        0.55,
+        500000
+    );
 echo "The employee's total earning is: ", $employee->earnings(); echo "\n";
 
 echo $employee->toString();
+
+} catch (\Exception $e) {
+    echo $e->getMessage();
+}
