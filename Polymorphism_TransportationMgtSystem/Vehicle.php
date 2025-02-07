@@ -8,11 +8,7 @@ abstract class Vehicle
     private $model;
     private $fuelLevel;
 
-    /**
-     * @param $vehicleId
-     * @param $model
-     * @param $fuelLevel
-     */
+
     public function __construct($vehicleId, $model, $fuelLevel)
     {
         $this->vehicleId = $vehicleId;

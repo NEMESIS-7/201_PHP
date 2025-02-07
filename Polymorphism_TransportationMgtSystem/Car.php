@@ -11,7 +11,7 @@ class Car extends Vehicle
         parent::__construct($vehicleId, $model, $fuelLevel);
         $this->fuelEfficiency = $fuelEfficiency;
     }
-    public function calculateRange()
+    public function calculateRange() : float
     {
         return parent::getFuelLevel() * $this->fuelEfficiency;
     }

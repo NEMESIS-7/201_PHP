@@ -4,7 +4,7 @@ namespace Abstraction_PayrollSystem;
 require_once 'Employee.php';
 class FullTimeEmployee extends Employee
 {
-    private $salary;
+    private float $salary;
 
     public function __construct($name, $employeeId, $salary)
     {
@@ -22,12 +22,12 @@ class FullTimeEmployee extends Employee
         return $this->salary;
     }
 
-    public function toString()
+    public function toString() : string
     {
-        echo "Full time employee details \n",
-        "Name: ", $this->getName(), "\n",
-        "Salary: $", $this->getSalary(), "\n",
-        "Employee ID: ", $this->getEmployeeId(), "\n";
+        return "Full time employee details \n".
+        "Name: ". $this->getName() . "\n".
+        "Salary: $" . $this->getSalary() . "\n".
+        "Employee ID: " . $this->getEmployeeId() . "\n";
     }
 }
 

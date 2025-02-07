@@ -20,6 +20,32 @@ class Vehicle
         $this->isAvailable = true;
     }
 
+    public function getVehicleId() : string{
+        return $this->vehicleId;
+    }
+
+    public function getBrand() : string{
+        return $this->brand;
+    }
+    public function getModel() : string{
+        return $this->model;
+    }
+    public function isAvailable() : bool{
+        return $this->isAvailable;
+    }
+
+    public function setAvailable(bool $isAvailable) : void{
+        $this->isAvailable = $isAvailable;
+    }
+    public function setVehicleId(string $vehicleId) : void{
+        $this->vehicleId = $vehicleId;
+    }
+    public function setBrand(string $brand) : void{
+        $this->brand = $brand;
+    }
+    public function setModel(string $model) : void{
+        $this->model = $model;
+    }
     public function rentVehicle(): void
     {
         if ($this->isAvailable) {

@@ -13,7 +13,7 @@ class Car extends Vehicle
         $this->seatingCapacity = $seatingCapacity;
     }
 
-    public function calculateCarrRentalCost(int $days): string
+    public function calculateCarRentalCost(int $days): string
     {
         $calculatedAmount = 1000 * $days + $this->seatingCapacity * 50;
         return "Rental cost for " . $days . " days: " . "is: " . $calculatedAmount;
@@ -33,4 +33,4 @@ try {
     echo $e->getMessage();
 }
 
-echo $car->calculateCarrRentalCost(5);
+echo $car->calculateCarRentalCost(5);

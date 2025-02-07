@@ -31,6 +31,28 @@ class CommissionEmployee
         }
     }
 
+    /**
+     * @throws \Exception
+     */
+    public function setGrossSales($grossSales) : void{
+        if ($grossSales >= 0){
+            $this->grossSales = $grossSales;
+        }else{
+            throw new \Exception("Gross sales must be greater than 0");
+        }
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function setCommissionRate($commissionRate) : void{
+        if ($commissionRate < 0 || $commissionRate > 1) {
+            throw new \Exception("Commission rate must be between 0 and 1");
+        }else{
+            $this->commissionRate = $commissionRate;
+        }
+    }
+
     public function earnings(): float|int
     {
         return ($this->grossSales * $this->commissionRate);
